@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Donation modal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<div class="d-flex flex-column align-items-center h-100">
+    <div class="col-md-6 my-5">
+        <h1>Dynamic paypal donation modal</h1>
+        <h5>Bind the script to a button</h5>
+        <textarea class="form-control mb-5" rows="14">$("#donate").donationModal({
+        currencies: ['EUR', 'USD'],
+        modalSize: 'md',
+        email: 'yourpaypalemail@email.com',
+        selectedCurrency: 'EUR',
+        defaultAmount: 2.99,
+        amountLabel: 'Donation amount',
+        itemName: 'Donation',
+        itemNumber: '000001',
+        redirectSuccess: '',
+        redirectFailed: '',
+        buttonHTML: '<i class="fab fa-paypal"></i> Continue to paypal'
+    });</textarea>
+        <h5>Available settings</h5>
+        <ul>
+            <li><strong>currencies</strong> - Array of paypal available currencies, pick the ones you need from the list ['EUR', 'USD', 'AUD', 'BRL', 'CAD', 'CNY', 'CZK', 'DKK', 'HKD', 'HUF', 'ILS', 'JPY', 'MYR', 'MXN', 'TWD', 'NZD', 'NOK', 'PHP', 'PLN', 'GBP', 'RUB', 'SGD', 'SEK', 'CHF', 'THB']</li>
+            <li><strong>modalSize</strong> - By default, modal size is set to sm but you can chose between sm, md and lg</li>
+            <li><strong>email</strong> - Your paypal email (attention email not .me link)</li>
+            <li><strong>selectedCurrency</strong> - The default selected currency in the list, by default is 'EUR'</li>
+            <li><strong>defaultAmount</strong> - Initial donation amount, by default is 2.99</li>
+            <li><strong>amountLabel</strong> - Text that appears as label for the donation form, by default is 'Donation amount'</li>
+            <li><strong>itemName</strong> - Used if you want to catch the log from IPN, by default is, 'Donation'</li>
+            <li><strong>itemNumber</strong> - Item SKU used if you want to catch the log from IPN, by default is, '000001'</li>
+            <li><strong>redirectSuccess</strong> - Full path where you want your user to be redirected if donation is complete</li>
+            <li><strong>redirectFailed</strong> - Full path where you want your user to be redirected if donation failed</li>
+            <li><strong>buttonHTML</strong> - Text that you want to apper on your button, by default is <code><i class="fab fa-paypal"></i> Continue to paypal</code></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h1>Examples</h1>
+        <button id="demo1" class="btn btn-primary"><i class="fab fa-paypal"></i> Donate with paypal</button>
+        <button id="demo2" class="btn btn-warning"><i class="fas fa-coffee"></i> Buy me a coffee</button>
+        <button id="demo3" class="btn btn-danger"><i class="fas fa-money-bill"></i> Support my work</button>
+    </div>
+</div>
+</body>
+<div style="position: fixed;bottom: 5%;right: 5%;">
+    <h5 style="margin-bottom: 1rem;padding-bottom: 1rem;border-bottom: 1px solid #000;text-align: center;">Support my work @ MMLTech</h5>
+    <div style="display: flex;align-items: center;">
+        <a style="margin-right:1rem;background: #d1e6fd;display: block;padding: 1rem;border-radius: 0.25rem;border: 1px solid #e9ecef;color: #000;font-weight: bold;" href="https://ko-fi.com/mmltech" target="_blank"><img src="https://storage.ko-fi.com/cdn/Kofi_Logo_Blue.svg" width="60px"/> Buy me a coffee</a>
+        <a style="background: #d1e6fd;display: block;padding: 1rem;border-radius: 0.25rem;border: 1px solid #e9ecef;color: #000;font-weight: bold;" href="https://obscountdown.com" target="_blank"><img src="https://streamcd.net/Assets/images/logo-white.png" width="60px" height="19px" /> My projects</a>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
